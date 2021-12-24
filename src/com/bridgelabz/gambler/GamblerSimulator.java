@@ -33,14 +33,14 @@ public class GamblerSimulator {
 				 
 			 }
 			 if(cashInHand==150 || cashInHand==50) {
-				 System.out.println("---");
+				 System.out.println("-----");
 				 System.out.println("Player would like to resign for current day"+i);
-				 System.out.println("----");
+				 System.out.println("-----");
 			 }
 			 if(cashInHand > 100) {
 				 int amountWonPerDay = cashInHand - AMOUNT_OF_STAKE;
 				 System.out.println("Player won day"+i+" RS "+amountWonPerDay);
-				 System.out.println("---");				 
+				 System.out.println("----");				 
 			 }
 			 else if(cashInHand < 100){
 				 int amountLostPerDay = AMOUNT_OF_STAKE - cashInHand;
@@ -48,9 +48,15 @@ public class GamblerSimulator {
 				 System.out.println("----");
 
 			 }
-
+			 if(cashInHand == 150) {
+				 System.out.println("Day"+i+" is gamblers Luckiest day as he won maximum amount "+cashInHand+" RS");
+			 }
+			 else if (cashInHand == 50) {
+				 System.out.println("Day"+i+" is gamblers Unluckiest day as he lost maximum amount "+cashInHand+" RS");
+			 }
 			 TOTAL_AMOUNT = TOTAL_AMOUNT + cashInHand;
 		}
+		 System.out.println("------");
 		 System.out.println("Total amount player has after 20 days as per day included = "+TOTAL_AMOUNT+" $");
 		 System.out.println("------");
 		 TOTAL_AMOUNT_DIFF_IN_MONTH = TOTAL_AMOUNT - AMOUNT_OF_STAKE * 20;
@@ -61,5 +67,4 @@ public class GamblerSimulator {
 			 System.out.println("Total cash gambler lost in that month "+TOTAL_AMOUNT_DIFF_IN_MONTH+" $");
 		 }
 	}
-}
-	
+}	
